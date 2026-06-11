@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+:root {
+  /* Warm neutral palette — feels professional, real-estate aesthetic */
+  --background: #f8f7f3;
+  --surface: #ffffff;
+  --surface-elevated: #ffffff;
+  --foreground: #1a1a1a;
+  --foreground-muted: #6b6b66;
+  --foreground-subtle: #9a9a92;
+  --border: #e8e5dd;
+  --border-strong: #d6d2c7;
+
+  /* KW-ish red used as primary accent (sparingly) */
+  --accent: #b91c1c;
+  --accent-soft: #fce7e7;
+
+  --shadow-sm: 0 1px 2px 0 rgba(20, 14, 4, 0.04), 0 1px 1px 0 rgba(20, 14, 4, 0.03);
+  --shadow-md: 0 2px 6px -1px rgba(20, 14, 4, 0.06), 0 4px 12px -2px rgba(20, 14, 4, 0.05);
+  --shadow-lg: 0 10px 30px -10px rgba(20, 14, 4, 0.15);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--foreground-muted);
+  --color-subtle: var(--foreground-subtle);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html, body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-feature-settings: "cv11", "ss01", "ss03";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Hide scrollbars on the kanban horizontal scroll */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* A subtle dotted background for empty states */
+.dotted-bg {
+  background-image: radial-gradient(circle, #e0dcd3 1px, transparent 1px);
+  background-size: 12px 12px;
+}
+
+/* Card hover lift */
+.card-lift {
+  transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
+}
+.card-lift:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-strong);
+}
+
+/* Pulse for live indicator */
+@keyframes live-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(0.85); }
+}
+.live-pulse { animation: live-pulse 1.8s ease-in-out infinite; }
