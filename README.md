@@ -6,6 +6,8 @@ Built as an intern project for Alan Wang & Marie. The thesis is simple:
 
 > Marie works out of one tool. The rest of us see the same thing live and can subscribe to listings we care about.
 
+**See also:** [`TOOL_COMPARISON.md`](TOOL_COMPARISON.md) — an evaluation of off-the-shelf tools (Trello, Asana, ClickUp, Monday, Notion, Airtable, Brivity, Open To Close) scored against Alan's stated needs, with a recommendation for what to actually trial first.
+
 ---
 
 ## What's in it
